@@ -1,0 +1,21 @@
+{
+  "name": "reporting",
+  "homepage": "https://github.com/chall68/BlackWatch",
+  "authors": [
+    "chall68"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "react": "^16.1.0"
+  }
+}

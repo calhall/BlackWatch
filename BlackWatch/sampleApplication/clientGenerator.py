@@ -4,21 +4,19 @@ from sampleObjects.User import User
 from datetime import datetime
 from sampleObjects.DetectionPoint import DetectionPoint
 
-import time, requests, random
+import time, requests, random, atexit
 
 def requestGenerator():
     userObject = randomUser()
     detectionPointObject = randomDetectionPoint()
 
     req = requests.post('http://localhost:5000/addevent', json = {"User": userObject.__dict__, "DetectionPoint" : detectionPointObject.__dict__, "Time" : str(datetime.now().isoformat())})
-    print (str(datetime.now().isoformat()))
 
     print(req.status_code)
 
 def randomUser():
     user = random.randint(1,2)
     attacker=0
-    print (user)
     if (user==1):
         attacker = User("Phillipo", "255.255.255.101")
     elif (user==2):
@@ -31,7 +29,6 @@ def randomUser():
 def randomDetectionPoint():
     rand = random.randint(1,2)
     dp=0
-    print (rand)
     if (rand==1):
         dp = DetectionPoint("HTTP Verb", "GET Request used where POST is expected")
     elif (rand==2):
@@ -43,3 +40,8 @@ def randomDetectionPoint():
 for i in range (10):
     requestGenerator()
     time.sleep(2)
+
+def closingTime():
+    print ("Exiting")
+
+atexit.register(closingTime)

@@ -24,19 +24,7 @@ except:
 #Handle a user event
 @app.route('/home', methods = ['GET'])
 def getInfo():
-    #event = request.data
-    #Result = ParseEvent(event) #Send post data to be filtered
     return render_template('home.html', details="There has been an event triggered")
-
-
-
-
-def ParseEvent(event):
-    decoded = json.loads(event)
-    user = decoded['User']
-    dp = decoded['DetectionPoint']
-    print ("Event Triggered by - " + user['username'] + " at detection point - " + dp['dpName'])
-
 
 
 def closingTime():

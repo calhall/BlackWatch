@@ -4,7 +4,7 @@ import sys, json, socket, pymongo, atexit, threading, time
 
 from analysis.rulebased import AnalyseEvent
 from pymongo import MongoClient
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 from flask_restful import Resource, Api
 
 app = Flask(__name__)
@@ -20,6 +20,10 @@ except:
     print ("Failed to connect to database")
     sys.exit() #If database can not be connected to - exit
 # ------------------------------------
+
+@app.route('/', methods = ['GET'])
+def home():
+    return render_template('index.html')
 
 
 #Handle a user event
@@ -49,7 +53,6 @@ def ParseEvent(event):
 
 
 def databaseAdd(event):
-    time.sleep(8)
     BlackWatch = db.BlackWatch
     eventID = BlackWatch.insert_one(event).inserted_id
     AnalyseEvent(BlackWatch, event)

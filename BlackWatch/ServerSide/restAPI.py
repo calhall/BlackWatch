@@ -1,14 +1,16 @@
 #!flask/bin/python
 
-import sys, json, socket, pymongo, atexit, threading, time
+import sys, json, socket, pymongo, atexit, threading, time, os
 
 from analysis.rulebased import AnalyseEvent
 from pymongo import MongoClient
 from flask import Flask, request, Response, render_template
 from flask_restful import Resource, Api
+from flask_socketio import SocketIO
 
 app = Flask(__name__)
-#api = Api(app)
+app.config['SECRET_KEY'] = 'blackwatch'
+socketio = SocketIO(app)
 
 
 #Connect to database -----------------
@@ -20,6 +22,7 @@ except:
     print ("Failed to connect to database")
     sys.exit() #If database can not be connected to - exit
 # ------------------------------------
+
 
 @app.route('/', methods = ['GET'])
 def home():
@@ -45,12 +48,12 @@ def ParseEvent(event):
         thread.start()
         #Do I need to use threading? Or should I just allow tasks to be completed prior to responding to the request
         #databaseAdd(decoded)
+        socketio.emit('event', ('username', 'ipaddress'))
         return ("Event is being added")
     else:
         print("Invalid IP + " + str(user['ipAddress']))
         return ("Invalid IP given")
     detectionPoint = decoded['DetectionPoint']
-
 
 def databaseAdd(event):
     BlackWatch = db.BlackWatch
@@ -71,7 +74,13 @@ def closingTime():
     client.close()
     print ("Cheerio")
 
+
+@socketio.on('message')
+def handle_message(message):
+    print('received message: ' + message['data'])
+
+
 atexit.register(closingTime)
 
 if __name__ == 'main':
-	app.run(debug=True, threaded=True)
+	socketio.run(app)

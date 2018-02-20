@@ -37,10 +37,9 @@ def randomDetectionPoint():
     return dp
 
 
-for i in range (10):
+for i in range (50):
     requestGenerator()
-    time.sleep(2)
-
+    time.sleep(0.5)
 def closingTime():
     print ("Exiting")
 

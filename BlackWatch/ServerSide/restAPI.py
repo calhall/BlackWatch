@@ -48,7 +48,7 @@ def ParseEvent(event):
         thread.start()
         #Do I need to use threading? Or should I just allow tasks to be completed prior to responding to the request
         #databaseAdd(decoded)
-        socketio.emit('event', ('username', 'ipaddress'))
+        socketio.emit('event', {'detectionPoint' : dp['dpName'], 'username' : user['username'], 'ipAddress' : user['ipAddress'], 'Time' : decoded['Time']}) #Send the event to the reporting agent
         return ("Event is being added")
     else:
         print("Invalid IP + " + str(user['ipAddress']))
@@ -79,6 +79,10 @@ def closingTime():
 def handle_message(message):
     print('received message: ' + message['data'])
 
+
+
+def sendAttack(dp, un, ip, time):
+    socketio.emit('attack', {'detectionPoint' : dp, 'username' : un, 'ipAddress' : ip, 'Time' : time}) #Send the attack to the reporting agent
 
 atexit.register(closingTime)
 

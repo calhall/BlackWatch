@@ -68,7 +68,7 @@
       <div class="jumbotron">
         <h1>BlackWatch</h1>
         <p>
-          <table class="table table-condensed">
+          <table class="table table-condensed" id="eventsTable">
             <thead>
               <tr>
                 <th>Detection Point</th>
@@ -76,27 +76,56 @@
                 <th>IP Address</th>
                 <th>Time</th>
               </tr>
+              <tr>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+              </tr>
+              <tr>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+              </tr>
+              <tr>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+              </tr>
+              <tr>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+              </tr>
+              <tr>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+              </tr>
+              <tr>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+              </tr>
+              <tr>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+              </tr>
+              <tr>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+                <th> - </th>
+              </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-              </tr>
             </tbody>
           </table>
         </p>
@@ -114,7 +143,40 @@
 
         socket.on('event', function(json)
         {
-          alert(JSON.stringify(json));
+          var table = document.getElementById("eventsTable");
+          table.deleteRow(8);
+          
+          var row = table.insertRow(1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+
+          cell1.innerHTML = json['detectionPoint'];          
+          cell2.innerHTML = json['username'];
+          cell3.innerHTML = json['ipAddress'];
+          cell4.innerHTML = json['Time'];
+
+        });
+
+        socket.on('attack', function(json)
+        {
+          alert(10);
+          var table = document.getElementById("eventsTable");
+          table.deleteRow(8);
+
+          var row = table.insertRow(1);
+          row.style.backgroundColor = "#9b0000";  
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+
+          cell1.innerHTML = json['detectionPoint'];          
+          cell2.innerHTML = json['username'];
+          cell3.innerHTML = json['ipAddress'];
+          cell4.innerHTML = json['Time'];
+
         });
       </script>
     

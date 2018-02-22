@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from pymongo import MongoClient
 from flask import Flask
 from flask_socketio import SocketIO
-#from ..restAPI import sendAttack
+import restAPI
 
 
 app = Flask("main")
@@ -46,5 +46,5 @@ def AnalyseEvent(BlackWatch, event):
     numberofEvents = BlackWatch.find({ "User.username" : username, "DetectionPoint.dpName" : dpName, "Time" : { '$gte' : Threshold.isoformat() }}).count() #Using dot notation (User.username) allows us to search nested objects
     if (numberofEvents >= int(countLimit)):
         #socketio.emit('attack', {'detectionPoint' : dpName, 'username' : username, 'ipAddress' : ipAddress, 'Time' : Time}) #Send the attack to the reporting agent
-        super().sendAttack(dpName, username, ipAddress, Time)
+        sendAttack(dpName, username, ipAddress, Time)
         print ("-------------The user - " + User['username'] + " has triggered an attack at detection point - " + dpName + "-----------------")

@@ -2,7 +2,8 @@
 
 import sys, json, socket, pymongo, atexit, threading, time, os
 
-from analysis.rulebased import AnalyseEvent
+# noinspection PyUnresolvedReferences
+from rulebased import AnalyseEvent #TODO Possibly check to see if I should be importing full directories
 from pymongo import MongoClient
 from flask import Flask, request, Response, render_template
 from flask_restful import Resource, Api
@@ -14,6 +15,7 @@ socketio = SocketIO(app)
 
 
 #Connect to database -----------------
+
 try:
     client = MongoClient()
     db = client.BlackWatch
@@ -21,6 +23,7 @@ try:
 except:
     print ("Failed to connect to database")
     sys.exit() #If database can not be connected to - exit
+
 # ------------------------------------
 
 
@@ -32,8 +35,12 @@ def home():
 #Handle a user event
 @app.route('/addevent', methods = ['POST'])
 def addEvent():
-    event = request.data
-    Result = ParseEvent(event) #Send post data to be filtered
+    try:
+        event = request.data
+        Result = ParseEvent(event) #Send post data to be filtered
+    except:
+        Result = "Incorrect formatting within POST request"
+    print (Result)
     return Result
 
 
@@ -44,21 +51,28 @@ def ParseEvent(event):
     dp = decoded['DetectionPoint']
     print ("Event Triggered by - " + user['username'] + " at detection point - " + dp['dpName'])
     if (checkIP(str(user['ipAddress']))):
-        thread = threading.Thread(target=databaseAdd, args=(decoded,)) #the arguments formatting is odd, however this ensures that only one parameter is passed
-        thread.start()
-        #Do I need to use threading? Or should I just allow tasks to be completed prior to responding to the request
-        #databaseAdd(decoded)
+
+        #thread = threading.Thread(target=databaseAdd, args=(decoded,)) #the arguments formatting is odd, however this ensures that only one parameter is passed
+        #thread.start()
+        #Threading has been temporarily disabled
+        #This is to allow the socketio communications (reporting) to work, as it does like threading without a queue
+        #TODO Implement RabbitMQ Queuing service
+
         socketio.emit('event', {'detectionPoint' : dp['dpName'], 'username' : user['username'], 'ipAddress' : user['ipAddress'], 'Time' : decoded['Time']}) #Send the event to the reporting agent
+        databaseAdd(decoded)
+        print ("Got here")
         return ("Event is being added")
     else:
         print("Invalid IP + " + str(user['ipAddress']))
-        return ("Invalid IP given")
-    detectionPoint = decoded['DetectionPoint']
+        return ("Incorrect formatting within POST request")
+
+
 
 def databaseAdd(event):
     BlackWatch = db.BlackWatch
-    eventID = BlackWatch.insert_one(event).inserted_id
-    AnalyseEvent(BlackWatch, event)
+    eventID = BlackWatch.insert_one(event).inserted_id #Add the event into the MongoDB database - BlackWatch
+    AnalyseEvent(BlackWatch, event, socketio)
+
 
 def checkIP(IP):
     try:
@@ -81,10 +95,7 @@ def handle_message(message):
 
 
 
-def sendAttack(dp, un, ip, time):
-    socketio.emit('attack', {'detectionPoint' : dp, 'username' : un, 'ipAddress' : ip, 'Time' : time}) #Send the attack to the reporting agent
-
 atexit.register(closingTime)
 
 if __name__ == 'main':
-	socketio.run(app)
+    socketio.run(app)

@@ -2506,9 +2506,11 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 label {
-  display: inline-block;
+  display: block;
   max-width: 100%;
   margin-bottom: 5px;
+  font-size: 50px;
+  text-align: center;
   font-weight: bold;
 }
 input[type="search"] {
@@ -4845,7 +4847,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .label {
   display: inline;
   padding: .2em .6em .3em;
-  font-size: 75%;
+  font-size: 40px;
   font-weight: bold;
   line-height: 1;
   color: #fff;
@@ -4867,8 +4869,14 @@ a.label:focus {
   position: relative;
   top: -1px;
 }
-.label-default {
-  background-color: #777;
+.label-events {
+  background-color: #222222;
+}
+.label-attacks {
+  background-color: #1b4517;
+}
+.label-responses {
+  background-color: #1a1a45;
 }
 .label-default[href]:hover,
 .label-default[href]:focus {
@@ -4954,6 +4962,13 @@ a.badge:focus {
 }
 .nav-pills > li > a > .badge {
   margin-left: 3px;
+}
+
+.counter {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 .jumbotron {
   padding-top: 30px;

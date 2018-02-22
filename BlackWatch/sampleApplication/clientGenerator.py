@@ -12,15 +12,15 @@ def requestGenerator():
 
     req = requests.post('http://localhost:5000/addevent', json = {"User": userObject.__dict__, "DetectionPoint" : detectionPointObject.__dict__, "Time" : str(datetime.now().isoformat())})
 
-    print(req.status_code)
+    print(req.text)
 
 def randomUser():
     user = random.randint(1,2)
     attacker=0
     if (user==1):
-        attacker = User("Phillipo", "255.255.255.101")
+        attacker = User("Phillipo", "255.255.255.101", "xxxx")
     elif (user==2):
-        attacker = User("Sergio", "109.123.234.1")
+        attacker = User("Sergio", "109.123.234.1", "xxxx")
 
     return attacker
 

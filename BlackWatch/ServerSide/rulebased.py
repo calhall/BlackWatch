@@ -23,6 +23,7 @@ def AnalyseEvent(BlackWatch, event, socketio):
     Time = datetime.strptime(strTime, "%Y-%m-%dT%H:%M:%S.%f")
 #----------------------------------------------------------------
 
+
 # Detection Point information -----------------------------------
     try:
         client = MongoClient()

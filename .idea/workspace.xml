@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0a1e36-be3e-4764-9210-cce5929aeaf4" name="Default" comment="Implementing unit testing for the communication between client/rest server. (Formatting etc.)">
-      <change beforePath="$PROJECT_DIR$/lib/python3.6/site-packages/coverage-4.5.1.dist-info/RECORD" afterPath="$PROJECT_DIR$/lib/python3.6/site-packages/coverage-4.5.1.dist-info/RECORD" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BlackWatch/sampleApplication/unitTestDatabase.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/BlackWatch/ServerSide/rulebased.py" afterPath="$PROJECT_DIR$/BlackWatch/ServerSide/rulebased.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,17 +14,39 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/virtualEnv$Flask_Run_Server.coverage" NAME="Flask Run Server Coverage Results" MODIFIED="1519325594602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BlackWatch/ServerSide" />
+    <SUITE FILE_PATH="coverage/virtualEnv$Flask_Run_Server.coverage" NAME="Flask Run Server Coverage Results" MODIFIED="1519390986347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BlackWatch/ServerSide" />
     <SUITE FILE_PATH="coverage/virtualEnv$restAPI.coverage" NAME="restAPI Coverage Results" MODIFIED="1519236919505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BlackWatch/ServerSide" />
     <SUITE FILE_PATH="coverage/virtualEnv$rulebased.coverage" NAME="rulebased Coverage Results" MODIFIED="1519236571147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BlackWatch/ServerSide" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="rulebased.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/BlackWatch/ServerSide/rulebased.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="495">
+                    <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="34" selection-end-column="61" />
+                    <folding>
+                      <element signature="e#0#22#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="restAPI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BlackWatch/ServerSide/restAPI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+            <state relative-caret-position="648">
+              <caret line="72" column="18" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="e#20#82#0" expanded="true" />
               </folding>
@@ -30,14 +54,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rulebased.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BlackWatch/ServerSide/rulebased.py">
+      <file leaf-file-name="clientGenerator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/clientGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+            <state relative-caret-position="465">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unitTestDatabase.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/unitTestDatabase.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#42#73#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unitTestSendEvents.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/unitTestSendEvents.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,6 +103,7 @@
       <find>jumbo</find>
       <find>label</find>
       <find>counter</find>
+      <find>gmail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -76,6 +121,7 @@
         <option value="$PROJECT_DIR$/BlackWatch/sampleApplication/unitTestSendEvents.py" />
         <option value="$PROJECT_DIR$/BlackWatch/ServerSide/restAPI.py" />
         <option value="$PROJECT_DIR$/BlackWatch/ServerSide/rulebased.py" />
+        <option value="$PROJECT_DIR$/BlackWatch/sampleApplication/unitTestDatabase.py" />
       </list>
     </option>
   </component>
@@ -130,13 +176,6 @@
               <item name="virtualEnv" type="b2602c69:ProjectViewProjectNode" />
               <item name="virtualEnv" type="462c0819:PsiDirectoryNode" />
               <item name="BlackWatch" type="462c0819:PsiDirectoryNode" />
-              <item name="sampleApplication" type="462c0819:PsiDirectoryNode" />
-              <item name="sampleObjects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="virtualEnv" type="b2602c69:ProjectViewProjectNode" />
-              <item name="virtualEnv" type="462c0819:PsiDirectoryNode" />
-              <item name="BlackWatch" type="462c0819:PsiDirectoryNode" />
               <item name="ServerSide" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -171,7 +210,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="vcs.CVS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BlackWatch/sampleApplication" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -301,11 +345,11 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.49642858" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.50357145" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37671232" sideWeight="0.49642858" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.204" sideWeight="0.50476193" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.234" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.204" sideWeight="0.4952381" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16607143" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -415,22 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/unitTestSendEvents.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/clientGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/sampleObjects/User.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -439,13 +467,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BlackWatch/ServerSide/restAPI.py">
+    <entry file="file://$PROJECT_DIR$/pip-selfcheck.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding>
-            <element signature="e#20#82#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyvenv.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -457,12 +491,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/clientGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/unitTestSendEvents.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BlackWatch/ServerSide/rulebased.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
-          <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="34" selection-end-column="61" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/ServerSide/restAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="72" column="18" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/unitTestDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#42#73#0" expanded="true" />
           </folding>
         </state>
       </provider>

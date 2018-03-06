@@ -19,7 +19,7 @@ socketio = SocketIO(app)
 try:
     client = MongoClient()
     db = client.BlackWatch
-    print ("Database connected")
+    BlackWatch=db.BlackWatch
 except:
     print ("Failed to connect to database")
     sys.exit() #If database can not be connected to - exit
@@ -60,7 +60,6 @@ def ParseEvent(event):
 
         socketio.emit('event', {'detectionPoint' : dp['dpName'], 'username' : user['username'], 'ipAddress' : user['ipAddress'], 'Time' : decoded['Time']}) #Send the event to the reporting agent
         databaseAdd(decoded)
-        print ("Got here")
         return ("Event is being added")
     else:
         print("Invalid IP + " + str(user['ipAddress']))

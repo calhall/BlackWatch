@@ -17,6 +17,7 @@ Install MongoDB [Install MongoDB Community Edition on Ubuntu — MongoDB Manual 
 * Ensure that the service is running - `sudo service mongod status` 
 	* If the service has stopped run - `sudo service mongod start`
 
+### To do - Windows installation
 
 ### Configure the necessary databases.
 
@@ -33,7 +34,7 @@ Install MongoDB [Install MongoDB Community Edition on Ubuntu — MongoDB Manual 
 
 Here we will create a separate database containing two example detection points. (HTTP Verb & Login Page)
 
-To create the database enter  `use Configuration`  and then add a single record to initiate the database
+To create the database enter  `use Configuration`  and then add a single record to initiate the database.
 	* Create record - `dp1 = {dpName : "HTTP Verb", Limit : "2", Period : "60"}`
 	* Create record - `dp2 = {dpName : "Login Page", Limit : "3", Period : "30"}`
 	* Add the record - db.DetectionPoints.insert(dp1);

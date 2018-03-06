@@ -12,25 +12,26 @@ class TestClient(unittest.TestCase):
     detectionPointObject = DetectionPoint("Login Page", "Hidden field altered within the login form")
     global userObject
     userObject = User("Test", "192.101.12.1", "xxxx")
+    global isoformatTime
+    isoformatTime = str(datetime.now().isoformat());
 
     def testCorrect(self):
 
-        self.assertEqual(sendEvent(userObject, detectionPointObject), "Event is being added") #Acceptable format
+        self.assertEqual(sendEvent(userObject, detectionPointObject, isoformatTime), "Event is being added") #Acceptable format
 
     def testIPWrong(self):
 
         userObjectWrong = User("1234", "192.299.12.1", "empty")
-        self.assertEqual(sendEvent(userObjectWrong, detectionPointObject), "Incorrect formatting within POST request") #Incorrect IP
+        self.assertEqual(sendEvent(userObjectWrong, detectionPointObject, isoformatTime), "Incorrect formatting within POST request") #Incorrect IP
 
-    def testDPWrong(self):
+    def testTimeFormat(self):
 
-        detectionPointObjectWrong = DetectionPoint("Incorrect DP", "This doesn't exist")
-        self.assertEqual(sendEvent(userObject, detectionPointObjectWrong), "Incorrect formatting within POST request") #Acceptable format
+        self.assertEqual(sendEvent(userObject, detectionPointObject, "2018-03-01T07:55:26-08:00"), "Event is being added") #Acceptable format
+        #Python's default ISO time looks like - 2018-03-01T08:04:35.867121
+        #PHP uses ISO 8601 which looks like   - 2018-03-01T07:55:26-08:00
 
-
-
-def sendEvent(user, dp):
-    req = requests.post('http://localhost:5000/addevent', json = {"User": user.__dict__, "DetectionPoint" : dp.__dict__, "Time" : str(datetime.now().isoformat())})
+def sendEvent(user, dp, time):
+    req = requests.post('http://localhost:5000/addevent', json = {"User": user.__dict__, "DetectionPoint" : dp.__dict__, "Time" : time})
     return req.text
 
 def closingTime():

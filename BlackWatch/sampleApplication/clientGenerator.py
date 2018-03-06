@@ -33,7 +33,6 @@ def randomDetectionPoint():
         dp = DetectionPoint("HTTP Verb", "GET Request used where POST is expected")
     elif (rand==2):
         dp = DetectionPoint("Login Page", "Hidden field altered within the login form")
-
     return dp
 
 

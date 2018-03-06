@@ -20,7 +20,9 @@ def AnalyseEvent(BlackWatch, event, socketio):
     sessionID = User['sessionID']
 
     strTime = event['Time']
-    Time = datetime.strptime(strTime, "%Y-%m-%dT%H:%M:%S.%f")
+    strippedTime = strTime[0:19] #Only take the necessary time information)
+    Time = datetime.strptime(strippedTime, "%Y-%m-%dT%H:%M:%S") #Simplified ISO 8601 time format
+
 #----------------------------------------------------------------
 
 
@@ -31,16 +33,26 @@ def AnalyseEvent(BlackWatch, event, socketio):
     except:
         print ("Failed to connect to configuration database")
 
-    DPConfig = db.DetectionPoints
-    PredeterminedDP = DPConfig.find_one({ "dpName" : dpName})
-    countLimit = PredeterminedDP['Limit']
-    print (countLimit)
-    timeLimit = PredeterminedDP['Period']
-    Threshold = Time - timedelta(seconds = int(timeLimit))
+    try:
+        DPConfig = db.DetectionPoints
+        PredeterminedDP = DPConfig.find_one({ "dpName" : dpName})
+        countLimit = PredeterminedDP['Limit']
+        timeLimit = PredeterminedDP['Period']
+        Threshold = Time - timedelta(seconds = int(timeLimit))
+
+        #If the detection point is found, check to see if this event indicates an attack
+        numberofEvents = BlackWatch.find({"User.username": username, "DetectionPoint.dpName": dpName, "Time": {'$gte': Threshold.isoformat()}}).count()  # Using dot notation (User.username) allows us to search nested objects
+        if (numberofEvents >= int(countLimit)):
+            socketio.emit('attack',
+                          {'detectionPoint': dpName, 'username': username, 'ipAddress': ipAddress, 'Time': str(Time),
+                           'Session': sessionID,
+                           'description': dpDescription})  # Send the attack to the reporting agent
+
+            print("-------------The user - " + User['username'] + " has triggered an attack at detection point - " + dpName + "-----------------")
+
+    except:
+        print("Detection point not properly configured")
+
 #---------------------------------------------------------------
 
 
-    numberofEvents = BlackWatch.find({ "User.username" : username, "DetectionPoint.dpName" : dpName, "Time" : { '$gte' : Threshold.isoformat() }}).count() #Using dot notation (User.username) allows us to search nested objects
-    if (numberofEvents >= int(countLimit)):
-        socketio.emit('attack', {'detectionPoint' : dpName, 'username' : username, 'ipAddress' : ipAddress, 'Time' : str(Time), 'Session' : sessionID, 'description' : dpDescription}) #Send the attack to the reporting agent
-        print ("-------------The user - " + User['username'] + " has triggered an attack at detection point - " + dpName + "-----------------")

@@ -37,7 +37,7 @@ Here we will create a separate database containing two example detection points.
 To create the database enter  `use Configuration`  and then add a single record to initiate the database.
 * Create record - `dp1 = {dpName : "HTTP Verb", Limit : "2", Period : "60", "Low"}`
 * Create record - `dp2 = {dpName : "Login Page", Limit : "3", Period : "30", Severity : "Low"}`
-* Add the record - db.DetectionPoints.insert(dp1);
-* Add the record - db.DetectionPoints.insert(dp2);
+* Add the record - `db.DetectionPoints.insert(dp1);`
+* Add the record - `db.DetectionPoints.insert(dp2);`
 
 **Ensure that the records added into the configuration database match those above, this will ensure that they pass the unit tests.**

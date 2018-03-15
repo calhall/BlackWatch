@@ -20,7 +20,7 @@ def randomUser():
     if (user==1):
         attacker = User("Phillipo", "255.255.255.101", "xxxx")
     elif (user==2):
-        attacker = User("Sergio", "109.123.234.1", "xxxx")
+        attacker = User("Sergio", "109.123.234.1", "yyyy")
 
     return attacker
 

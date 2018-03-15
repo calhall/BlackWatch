@@ -1,84 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <br>
-    <title>BlackWatch</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" >
+{% extends 'base.html' %}
+{% set active_page = "configuration" %}
+{% block content %}
 
 
+<div class="container theme-showcase" role="main">
 
-  <body>
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">BlackWatch</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Dashboard</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="{{ url_for('configuration') }}">Configuration</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container theme-showcase" role="main">
-
-      <div class="page-header">
+    <div class="page-header">
         <br>
-        <h1>Activity</h1>
-      </div>
-      <p>
-        <button type="button" class="btn btn-lg btn-default">All</button>
-        <button type="button" class="btn btn-lg btn-default">Events</button>
-        <button type="button" class="btn btn-lg btn-default">Attacks</button>
-        <button type="button" class="btn btn-lg btn-default">Responses</button>
-      </p>
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-
-
-    </div> <!-- /container -->
-    <div class="counter">
-    <span class="label label-events">Events</span>
-    <span class="label label-attacks">Attacks</span>
-    <span class="label label-responses">Responses</span>
+        <h1>Configuration</h1>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <div class="jumbotron" id="main">
+        <div style="padding-top: 0px; padding-bottom: 0px;" class="jumbotron" >
+            <div style="width: 25%; float: left; text-align: center;"> <h2> Name </h2></div>
+            <div style="width: 25%; float: left; text-align: center;"> <h2> Count </h2></div>
+            <div style="width: 25%; float: left; text-align: center;"> <h2> Period </h2></div>
+            <div style="width: 25%; float: right; text-align: center;"> <h2> Responses </h2></div>
+        </div>
+
+
+        <input type="image" src="{{ url_for('static', filename='images/plus.png') }}" id="newDP" class="custom-image">
+
+    </div>
+</div>
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Create a new detection point</h2>
+      <br>
+      <br>
+    <label for="name">Detection Point Name</label>
+    <input type="text" id="name" name="name" placeholder="Detection Point Name">
+
+    <label for="severity">Severity</label>
+    <select id="severity">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+    <br><br>
+    <label for="count">Event Count</label>
+    <input type="text" id="count" name="count" placeholder="Event Count">
+      <label for="period"> Time Period </label>
+    <input type="text" id="period" name="period" placeholder="Time Period" >
+
+    <label for="response"> Response/Responses</label>
+    <input type="text" id="response" name="response" placeholder="Responses">
+      <h4 style="color: #b9bbbf; font-size: 14px;">Place time limits in brackets () and seperate responses using commas. Eg. Logout, Lockout(60)</h4>
+
+      <input id="add"type="submit" value="Add Detection Point">
+
+  </div>
+
+</div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    
-  </body>
-</html>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/configuration.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/addDetectionPoint.js') }}"></script>
+
+
+{% endblock %}

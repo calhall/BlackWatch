@@ -3,6 +3,7 @@
 import sys, json, socket, pymongo, atexit, threading, time, os
 
 from BlackWatch.rulebased import AnalyseEvent
+from BlackWatch.configuration import GetConfiguration, addDP, RemoveDP
  #TODO Possibly check to see if I should be importing full directories
 from pymongo import MongoClient
 from flask import Flask, request, Response, render_template
@@ -20,16 +21,12 @@ try:
     client = MongoClient()
     db = client.BlackWatch
     BlackWatch=db.BlackWatch
+
 except:
     print ("Failed to connect to database")
     sys.exit() #If database can not be connected to - exit
 
 # ------------------------------------
-
-
-@app.route('/', methods = ['GET'])
-def home():
-    return render_template('index.html')
 
 
 #Handle a user event
@@ -44,6 +41,32 @@ def addEvent():
     return Result
 
 
+@app.route('/adddetectionpoint', methods = ['POST'])
+def addDetectionPoint():
+    detectionPoint = request.data
+    Result = dpdatabaseAdd(detectionPoint)
+
+    print (Result)
+    return Result
+
+
+@app.route('/getConfiguration', methods = ['GET'])
+def getConfig():
+    configurationObject = GetConfiguration();
+    print (configurationObject)
+    return json.dumps(configurationObject)
+
+@app.route('/deleteDP', methods = ['POST'])
+def deleteDP():
+    jsondata = json.loads(request.data)
+    deleteName = jsondata['dpName']
+    try:
+        RemoveDP(deleteName)
+        print ("Deleted")
+        return "DP deleted"
+    except:
+        print ("Failed to delete DP")
+        return "Failed to delete DP"
 
 def ParseEvent(event):
     decoded = json.loads(event)
@@ -69,12 +92,15 @@ def ParseEvent(event):
 
 def databaseAdd(event):
     BlackWatch = db.BlackWatch
-    eventID = BlackWatch.insert_one(event).inserted_id #Add the event into the MongoDB database - BlackWatch
+    BlackWatch.insert_one(event) #Add the event into the MongoDB database - BlackWatch
     try:
         AnalyseEvent(BlackWatch, event, socketio)
     except Exception as e:
         print (e)
 
+def dpdatabaseAdd(dp):
+    addResult = addDP(dp)
+    return addResult
 
 def checkIP(IP):
     try:
@@ -91,10 +117,14 @@ def closingTime():
     print ("Cheerio")
 
 
-@socketio.on('message')
-def handle_message(message):
-    print('received message: ' + message['data'])
+@app.route('/', methods = ['GET'])
+def dashboard():
+    return render_template('index.html')
 
+
+@app.route('/configuration', methods = ['GET'])
+def configuration():
+    return render_template('configuration.html')
 
 
 atexit.register(closingTime)

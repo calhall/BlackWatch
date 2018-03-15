@@ -1,3 +1,9 @@
+        eventLabel = document.getElementById("eventCount");
+        attackLabel = document.getElementById("attackCount");
+
+        var eventCounter = 0;
+        var attackCounter = 0;
+        var responseCounter = 0;
 
         var socket = io.connect('http://' + document.domain + ':' + location.port);
         socket.on('connect', function()
@@ -20,7 +26,8 @@
           cell2.innerHTML = json['username'];
           cell3.innerHTML = json['ipAddress'];
           cell4.innerHTML = json['Time'];
-
+          eventCounter = eventCounter + 1;
+          eventLabel.innerHTML = eventCounter;
         });
 
         socket.on('attack', function(json)
@@ -39,5 +46,6 @@
           cell2.innerHTML = json['username'];
           cell3.innerHTML = json['ipAddress'];
           cell4.innerHTML = json['Time'];
-
+          attackCounter++;
+          attackLabel.innerHTML = attackCounter;
         });

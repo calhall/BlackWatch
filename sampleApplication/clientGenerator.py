@@ -11,8 +11,10 @@ def requestGenerator():
     detectionPointObject = randomDetectionPoint()
 
     req = requests.post('http://localhost:5000/addevent', json = {"User": userObject.__dict__, "DetectionPoint" : detectionPointObject.__dict__, "Time" : str(datetime.now().isoformat())})
+    print (req.text)
 
-    print(req.text)
+    checkResp = requests.get('http://localhost:5000/getResponses')
+    print (checkResp.text)
 
 def randomUser():
     user = random.randint(1,2)
@@ -38,7 +40,7 @@ def randomDetectionPoint():
 
 for i in range (50):
     requestGenerator()
-    time.sleep(0.5)
+    time.sleep(1.5)
 def closingTime():
     print ("Exiting")
 

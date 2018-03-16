@@ -4,6 +4,7 @@ import sys, json, socket, pymongo, atexit, threading, time, os
 
 from BlackWatch.rulebased import AnalyseEvent
 from BlackWatch.configuration import GetConfiguration, addDP, RemoveDP
+from BlackWatch.responseHandler import getResponses
  #TODO Possibly check to see if I should be importing full directories
 from pymongo import MongoClient
 from flask import Flask, request, Response, render_template
@@ -28,6 +29,20 @@ except:
 
 # ------------------------------------
 
+# Render the templates for the web reporting mechanism
+@app.route('/', methods = ['GET'])
+def dashboard():
+    return render_template('index.html')
+
+
+@app.route('/configuration', methods = ['GET'])
+def configuration():
+    return render_template('configuration.html')
+
+# ------------------------------------
+
+
+# Handle communication with the server
 
 #Handle a user event
 @app.route('/addevent', methods = ['POST'])
@@ -37,7 +52,6 @@ def addEvent():
         Result = ParseEvent(event) #Send post data to be filtered
     except:
         Result = "Incorrect formatting within POST request"
-    print (Result)
     return Result
 
 
@@ -56,6 +70,14 @@ def getConfig():
     print (configurationObject)
     return json.dumps(configurationObject)
 
+
+@app.route('/getResponses', methods = ['GET'])
+def sendResponses():
+    responses = getResponses()
+    print (responses)
+    return responses
+
+
 @app.route('/deleteDP', methods = ['POST'])
 def deleteDP():
     jsondata = json.loads(request.data)
@@ -68,11 +90,13 @@ def deleteDP():
         print ("Failed to delete DP")
         return "Failed to delete DP"
 
+# -----------------------------
+
 def ParseEvent(event):
     decoded = json.loads(event)
     user = decoded['User']
     dp = decoded['DetectionPoint']
-    print ("Event Triggered by - " + user['username'] + " at detection point - " + dp['dpName'])
+    #print ("Event Triggered by - " + user['username'] + " at detection point - " + dp['dpName'])
     if (checkIP(str(user['ipAddress']))):
 
         #thread = threading.Thread(target=databaseAdd, args=(decoded,)) #the arguments formatting is odd, however this ensures that only one parameter is passed
@@ -114,17 +138,8 @@ def checkIP(IP):
 
 def closingTime():
     client.close()
+    clearResponses()
     print ("Cheerio")
-
-
-@app.route('/', methods = ['GET'])
-def dashboard():
-    return render_template('index.html')
-
-
-@app.route('/configuration', methods = ['GET'])
-def configuration():
-    return render_template('configuration.html')
 
 
 atexit.register(closingTime)

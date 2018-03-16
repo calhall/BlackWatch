@@ -1,20 +1,14 @@
 import pprint, pymongo
 from datetime import datetime, timedelta
 from pymongo import MongoClient
-from .reputationBased import checkReputation
-from flask import Flask
-from flask_socketio import SocketIO
-
+from BlackWatch.reputationBased import checkReputation, increaseReputation
+from BlackWatch.responseHandler import addResponse
 
 def AnalyseEvent(BlackWatch, event, socketio):
-
-
-    print ("Analysing")
 
 # Event information ---------------------------------------------
     DetectionPoint = event['DetectionPoint']
     dpName = DetectionPoint['dpName']
-    dpDescription = DetectionPoint['description']
     User = event['User']
     username = User['username']
     ipAddress = User['ipAddress']
@@ -40,27 +34,42 @@ def AnalyseEvent(BlackWatch, event, socketio):
         countLimit = PredeterminedDP['Limit']
         timeLimit = PredeterminedDP['Period']
         severity = PredeterminedDP['Severity']
+        response = PredeterminedDP['Response']
         Threshold = Time - timedelta(seconds = int(timeLimit))
 
-        #If the detection point is found, check to see if this event indicates an attack
-        numberofUserEvents = BlackWatch.find({"User.username": username, "DetectionPoint.dpName": dpName, "Time": {'$gte': Threshold.isoformat()}}).count()  # Using dot notation (User.username) allows us to search nested objects
-        numberofSessionEvents = BlackWatch.find({"User.sessionID": sessionID, "DetectionPoint.dpName": dpName, "Time": {'$gte': Threshold.isoformat()}}).count()  # Using dot notation (User.username) allows us to search nested objects
+
+        # If the detection point is found, check to see if this event indicates an attack
+
+
+        if (username != None and username != "Anonymous"): # Make sure the username isn't blank (or all unauthenticated users will match)
+            numberofUserEvents = BlackWatch.find({"User.username": username, "DetectionPoint.dpName": dpName,
+                                                  "Time": {'$gte': Threshold.isoformat()}}).count()  # Using dot notation (User.username) allows us to search nested objects
+
+            increaseReputation(event, username, strTime, severity, socketio, client) # Add this event to the users reputation
+            numberofSessionEvents = 0 #No point checking sessionID as it will be the same as authenticated user
+        else:
+            numberofUserEvents=0
+            increaseReputation(event, sessionID, strTime, severity, socketio, client) # Add this event to the users reputation
+            numberofSessionEvents = BlackWatch.find({"User.sessionID": sessionID, "DetectionPoint.dpName": dpName,
+                                                     "Time": {'$gte': Threshold.isoformat()}}).count()  # Using dot notation (User.username) allows us to search nested objects
+
 
         if (numberofUserEvents >= int(countLimit)):
+            print ("Attack Identified - " + username + " - " + dpName)
             socketio.emit('attack',
-                          {'detectionPoint': dpName, 'username': username, 'ipAddress': ipAddress, 'Time': str(Time),
-                           'Session': sessionID,
-                           'description': dpDescription})  # Send the attack to the reporting agent
+                          {'detectionPoint': dpName, 'username': username, 'ipAddress': ipAddress, 'Time': strTime,
+                           'Session': sessionID})  # Send the attack to the reporting agent
+            addResponse(username, sessionID, ipAddress, dpName, response, Time, socketio)
+
         elif (numberofSessionEvents >= int(countLimit)): # Incase the attacker is not authenticated under a user
+            print ("Attack Identified - " + username + " - " + dpName)
             socketio.emit('attack',
-                          {'detectionPoint': dpName, 'username': 'Anonymous', 'ipAddress': ipAddress, 'Time': str(Time),
-                           'Session': sessionID,
-                           'description': dpDescription})  # Send the attack to the reporting agent    except:
-        else:
-            # If the previous types of analysis have not identified an attack, move onto different methods
-            checkReputation(BlackWatch, event, socketio)
-    except:
-        print ("Detection point not properly configured.")
+                          {'detectionPoint': dpName, 'username': 'Anonymous', 'ipAddress': ipAddress, 'Time': strTime,
+                           'Session': sessionID})  # Send the attack to the reporting agent
+            addResponse(None, sessionID, ipAddress, dpName, response, Time, socketio)
+
+    except Exception as exc:
+        print ("Detection point not properly configured. - " and exc)
 
 # ---------------------------------------------------------------
 

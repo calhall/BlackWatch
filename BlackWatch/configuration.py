@@ -50,7 +50,6 @@ def addDP(rawdp):
             ConfigurationDB.insert_one(dp)
             return "DP added successfully"
     except Exception as e:
-        print ("Shit - " + e)
         return "Failed to add DP"
 
 

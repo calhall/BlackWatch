@@ -21,17 +21,35 @@ def checkReputation(event, Time, socketio, client):
     BlackWatch = client.BlackWatch
     watchlist = BlackWatch.Watchlist
 
+    currentTime = datetime.now().isoformat()
+    currentTimeDT = datetime.strptime(currentTime, "%Y-%m-%dT%H:%M:%S.%f")
+
     if (watchlist.find({'UserID' : username}).count() > 0):
         userCursor = watchlist.find({'UserID' : username})
 
         for document in userCursor:
             reputation = document['Reputation']
-            print (reputation)
+            lastChecked = document['LastChecked']
+
+
+
+        lastCheckedDT = datetime.strptime(lastChecked, "%Y-%m-%dT%H:%M:%S.%f")
+
+        difference = currentTimeDT - lastCheckedDT #Get the total difference in time between last checked and now
+
+        for x in range (0, int(difference.total_seconds()/600)): # Every ten minutes since last event, decrement the users reputation by one
+            if (reputation==0) :
+                break
+            else:
+                reputation = reputation - 1
+
+            watchlist.update({'UserID': username}, {'$set': {'Reputation': reputation}})
+            watchlist.update({'UserID': username}, {'$set': {'LastChecked': currentTime}})
         if (reputation >= 10):
             socketio.emit('attack',
                           {'detectionPoint': "Multiple", 'username': username, 'ipAddress': ipAddress, 'Time': strTime,
                            'Session': sessionID})  # Send the attack to the reporting agent
-            addResponse(username, sessionID, ipAddress, "Multiple", "Warn User", Time, socketio)
+            addResponse(username, sessionID, ipAddress, "Multiple", "Warn User, Logout", Time, socketio)
 
 
 
@@ -40,6 +58,23 @@ def checkReputation(event, Time, socketio, client):
 
         for document in userCursor:
             reputation = document['Reputation']
+            lastChecked = document['LastChecked']
+
+            lastCheckedDT = datetime.strptime(lastChecked, "%Y-%m-%dT%H:%M:%S.%f")
+
+            difference = currentTimeDT - lastCheckedDT  # Get the total difference in time between last checked and now
+
+            while (reputation > 0):
+                for x in range(0, int(
+                        difference.total_seconds() / 600)):  # Every ten minutes since last event, decrement the users reputation by one
+                    if (reputation == 0):
+                        break
+                    else:
+                        reputation = reputation - 1
+
+                watchlist.update({'UserID': sessionID}, {'$set': {'Reputation': reputation}})
+                watchlist.update({'UserID': sessionID}, {'$set': {'LastChecked': currentTime}})
+
 
         if (reputation >= 10):
             socketio.emit('attack',
@@ -64,20 +99,19 @@ def increaseReputation(event, userID, Time, severity, socketio, client):
         elif (severity=="High"):
             severityInt = 8
         if (watchlist.find({'UserID' : userID}).count() > 0):
-            # TODO add in IF statement here so there is a max reputation you can have
-            watchlist.update({'UserID' : userID}, { '$inc': { 'Reputation' : severityInt}}) #{'LastChecked' : datetime.now().isoformat()}
-            #watchlist.update({'UserID' : userID}, {'LastChecked' : datetime.now().isoformat()}, True)
+            user = watchlist.find({'UserID' : userID})
+            for doc in user:
+                reputation = doc['Reputation']
+
+            if (reputation <= 15): # Ensures that a user's reputation can only get so high
+                watchlist.update({'UserID' : userID}, { '$inc': { 'Reputation' : severityInt}})
+                watchlist.update({'UserID' : userID}, { '$set': {'LastChecked' : datetime.now().isoformat()}})
 
         else:
-            watchlist.insert_one({'UserID' : userID, 'Reputation' : severityInt})
+            watchlist.insert_one({'UserID' : userID, 'Reputation' : severityInt, 'LastChecked' : datetime.now().isoformat()})
     except Exception as exc:
         print (exc)
 
     checkReputation(event, Time, socketio, client)
-    #print("User under watch - " + watchlist.find({'UserID' : userID}))
-# Detection Point information -----------------------------------
-
-
-#---------------------------------------------------------------
 
 

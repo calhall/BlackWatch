@@ -66,7 +66,7 @@ def addDetectionPoint():
 
 @app.route('/getConfiguration', methods = ['GET'])
 def getConfig():
-    configurationObject = GetConfiguration();
+    configurationObject = GetConfiguration()
     print (configurationObject)
     return json.dumps(configurationObject)
 
@@ -96,7 +96,6 @@ def ParseEvent(event):
     decoded = json.loads(event)
     user = decoded['User']
     dp = decoded['DetectionPoint']
-    #print ("Event Triggered by - " + user['username'] + " at detection point - " + dp['dpName'])
     if (checkIP(str(user['ipAddress']))):
 
         #thread = threading.Thread(target=databaseAdd, args=(decoded,)) #the arguments formatting is odd, however this ensures that only one parameter is passed
@@ -138,7 +137,6 @@ def checkIP(IP):
 
 def closingTime():
     client.close()
-    clearResponses()
     print ("Cheerio")
 
 

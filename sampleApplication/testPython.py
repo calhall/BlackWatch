@@ -4,10 +4,9 @@ from datetime import datetime, timedelta
 currentTime = datetime.now().isoformat()
 currentTimeDT = datetime.strptime(currentTime, "%Y-%m-%dT%H:%M:%S.%f")
 
-fakeTime = currentTimeDT - timedelta(minutes = 35)
-if currentTimeDT > fakeTime + timedelta(minutes = 30):
-    print ("FUCK THE WORLD")
-else:
+sampleTime = "2018-03-17T17:23:43.635745"
+sampleTimeDT = datetime.strptime(sampleTime, "%Y-%m-%dT%H:%M:%S.%f")
 
-    print ("fucked it")
+difference = currentTimeDT - sampleTimeDT
+print (difference.total_seconds() / 600)
 

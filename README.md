@@ -38,6 +38,7 @@ Install MongoDB [Install MongoDB Community Edition on Ubuntu — MongoDB Manual 
 Here we will create a separate database containing two example detection points. (HTTP Verb & Login Page)
 
 To create the database enter  `use Configuration`  and then add a single record to initiate the database.
+* db.createCollection('DetectionPoints')
 * Create record - `dp1 = {dpName : "HTTP Verb", Limit : "2", Period : "60", Severity : "Low"}`
 * Create record - `dp2 = {dpName : "Login Page", Limit : "3", Period : "30", Severity : "Low"}`
 * Add the record - `db.DetectionPoints.insert(dp1);`

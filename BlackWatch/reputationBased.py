@@ -49,7 +49,7 @@ def checkReputation(event, Time, socketio, client):
             socketio.emit('attack',
                           {'detectionPoint': "Multiple", 'username': username, 'ipAddress': ipAddress, 'Time': strTime,
                            'Session': sessionID})  # Send the attack to the reporting agent
-            addResponse(username, sessionID, ipAddress, "Multiple", "Warn User, Logout", Time, socketio)
+            addResponse(username, sessionID, ipAddress, "Multiple", "Warn User", Time, socketio)
 
 
 
@@ -92,6 +92,8 @@ def increaseReputation(event, userID, Time, severity, socketio, client):
         watchlist = BlackWatch.Watchlist
 
         severityInt=0
+        if (severity=="Very Low"):
+            severityInt = 1
         if (severity=="Low"):
             severityInt = 2
         elif (severity=="Medium"):
@@ -112,6 +114,5 @@ def increaseReputation(event, userID, Time, severity, socketio, client):
     except Exception as exc:
         print (exc)
 
-    checkReputation(event, Time, socketio, client)
 
 

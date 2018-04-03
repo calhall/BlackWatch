@@ -4,7 +4,7 @@ import sys, json, socket, pymongo, atexit, threading, time, os
 
 from BlackWatch.rulebased import AnalyseEvent
 from BlackWatch.configuration import GetConfiguration, addDP, RemoveDP
-from BlackWatch.responseHandler import getResponses
+from BlackWatch.responseHandler import getResponses, getResponsesDB
  #TODO Possibly check to see if I should be importing full directories
 from pymongo import MongoClient
 from flask import Flask, request, Response, render_template
@@ -19,7 +19,9 @@ socketio = SocketIO(app)
 #Connect to database -----------------
 
 try:
-    client = MongoClient()
+    client = MongoClient(serverSelectionTimeoutMS=1) # Max one second timeout for database queries
+                                                     # Increase this if necessary (shouldn't be)
+    client.server_info()
     db = client.BlackWatch
     BlackWatch=db.BlackWatch
 
@@ -44,12 +46,12 @@ def configuration():
 
 # Handle communication with the server
 
-#Handle a user event
+# Handle a user event
 @app.route('/addevent', methods = ['POST'])
 def addEvent():
     try:
-        event = request.data
-        Result = ParseEvent(event) #Send post data to be filtered
+        event = request.data.decode('utf-8')
+        Result = ParseEvent(event) #Send post request data to be analysed
     except:
         Result = "Incorrect formatting within POST request"
     return Result
@@ -57,7 +59,7 @@ def addEvent():
 
 @app.route('/adddetectionpoint', methods = ['POST'])
 def addDetectionPoint():
-    detectionPoint = request.data
+    detectionPoint = request.data.decode('utf-8')
     Result = dpdatabaseAdd(detectionPoint)
 
     print (Result)
@@ -74,13 +76,36 @@ def getConfig():
 @app.route('/getResponses', methods = ['GET'])
 def sendResponses():
     responses = getResponses()
-    print (responses)
     return responses
+
+@app.route('/getAttacks', methods = ['GET'])
+def getAttacks():
+
+    attackList = []
+    try:
+        attacksCursor = db.Prison.find().sort([('_id', 1)]).limit(10);
+        for document in attacksCursor:
+            del document['_id']
+            print(document)
+            attackList.append(document)
+    except Exception as exc:
+        print (exc)
+    return json.dumps(attackList)
+
+
+@app.route('/getRecentResponses', methods = ['GET'])
+def getRecentResponses():
+    try:
+        recentResponses = (getResponsesDB())
+        print (recentResponses)
+        return recentResponses
+    except Exception as exception:
+        print (exception)
 
 
 @app.route('/deleteDP', methods = ['POST'])
 def deleteDP():
-    jsondata = json.loads(request.data)
+    jsondata = json.loads(request.data.decode('utf-8'))
     deleteName = jsondata['dpName']
     try:
         RemoveDP(deleteName)
@@ -119,7 +144,7 @@ def databaseAdd(event):
     try:
         AnalyseEvent(BlackWatch, event, socketio)
     except Exception as e:
-        print (e)
+        print ("Failed to analyse event " and e)
 
 def dpdatabaseAdd(dp):
     addResult = addDP(dp)

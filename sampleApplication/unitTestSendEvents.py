@@ -9,7 +9,7 @@ import time, requests, random, atexit, unittest
 class TestClient(unittest.TestCase):
 
     global detectionPointObject
-    detectionPointObject = DetectionPoint("Login Page", "Hidden field altered within the login form")
+    detectionPointObject = DetectionPoint("<script>alert(1)</script>", "Hidden field altered within the login form")
     global userObject
     userObject = User("Test", "192.101.12.1", "xxxx")
     global isoformatTime

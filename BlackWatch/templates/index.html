@@ -3,6 +3,8 @@
 {% block content %}
 
 
+
+
 <div class="container theme-showcase" role="main">
 
       <div class="page-header">
@@ -10,10 +12,9 @@
         <h1>Activity</h1>
       </div>
       <p>
-        <button type="button" class="btn btn-lg btn-default">All</button>
-        <button type="button" class="btn btn-lg btn-default">Events</button>
-        <button type="button" class="btn btn-lg btn-default">Attacks</button>
-        <button type="button" class="btn btn-lg btn-default">Responses</button>
+        <button type="button" class="btn btn-lg btn-default" id="btnAll">All</button>
+        <button type="button" class="btn btn-lg btn-default" id="btnAttacks">Attacks</button>
+        <button type="button" class="btn btn-lg btn-default" id="btnResponses">Responses</button>
       </p>
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -25,7 +26,7 @@
               <tr>
                 <th>Detection Point</th>
                 <th>Username</th>
-                <th>IP Address</th>
+                <th id="thirdColumn">IP Address</th>
                 <th>Time</th>
               </tr>
               <tr>
@@ -102,6 +103,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='scripts/eventListener.js') }}"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
  {% endblock %}

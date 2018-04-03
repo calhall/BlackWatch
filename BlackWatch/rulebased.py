@@ -67,6 +67,8 @@ def AnalyseEvent(BlackWatch, event, socketio):
                           {'detectionPoint': dpName, 'username': 'Anonymous', 'ipAddress': ipAddress, 'Time': strTime,
                            'Session': sessionID})  # Send the attack to the reporting agent
             addResponse(None, sessionID, ipAddress, dpName, response, Time, socketio)
+        else:
+            checkReputation(event, Time, socketio, client)
 
     except Exception as exc:
         print ("Detection point not properly configured. - " and exc)

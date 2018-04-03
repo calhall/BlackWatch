@@ -17,11 +17,12 @@ def addResponse(username, sessionID, ipAddress, dpName, response, Time, socketio
     except Exception as dbException:
         print (dbException)
 
-    #Add the attack to the attack database prior to adding response
-
     # Add the malicious user to a list (for monitoring and for incrementing responses)
     if (username):
         finalResponse = determineResponse(username, dpName, response, prison)
+        if (finalResponse[0] == ' '):  # If the user has entered multiple responses, and has used a space after the comma
+            finalResponse = finalResponse[1:]
+
         attackObject = {'attackerID' : username, 'dpName' : dpName, 'sessionID' : sessionID, 'ipAddress' : ipAddress, 'Time' : datetime.now().isoformat()}
         responseObject = {'dpName': dpName, 'username': username, 'ipAddress': ipAddress, 'Time': Time.isoformat(),
                        'Session': sessionID, 'Response' : finalResponse}
@@ -30,6 +31,8 @@ def addResponse(username, sessionID, ipAddress, dpName, response, Time, socketio
         responseDB.insert_one(responseObject)
     elif (sessionID != None):
         finalResponse = determineResponse(sessionID, dpName, response, prison)
+        if (finalResponse[0] == ' '):  # If the user has entered multiple responses, and has used a space after the comma
+            finalResponse = finalResponse[1:]
 
         attackObject = {'attackerID': username, 'dpName': dpName, 'sessionID' : sessionID, 'ipAddress' : ipAddress, 'Time' : datetime.now().isoformat()}
         responseObject = {'dpName': dpName, 'username': 'Anonymous', 'ipAddress': ipAddress, 'Time': Time.isoformat(),
@@ -38,35 +41,42 @@ def addResponse(username, sessionID, ipAddress, dpName, response, Time, socketio
         prison.insert_one(attackObject)
         responseDB.insert_one(responseObject)
 
-    if (finalResponse[0] == ' '): # If the user has entered multiple responses, and has used a space after the comma
-        finalResponse = finalResponse[1:]
 
-    respObject = {'Username' : username, 'Detection Point' : dpName, 'SessionID' : sessionID, 'Response' : finalResponse}
-    responses.append(respObject) # Maybe add this to a db? Realistically... do I need to? Should be accessed very regularly
+    if (finalResponse != "Manual Response"):
+        respObject = {'Username' : username, 'Detection Point' : dpName, 'SessionID' : sessionID, 'Response' : finalResponse}
+        responses.append(respObject) # Maybe add this to a db? Realistically... do I need to? Should be accessed very regularly
 
-def getResponses():
-    formattedResponses = json.dumps(responses)
-    responses.clear()
-    return formattedResponses
 
-def getResponsesDB():
 
-    BlackWatch = client.BlackWatch
-    responseDB = BlackWatch.Responses
-    currentTime = datetime.now().isoformat()
-    recentTime = datetime.strptime(currentTime, "%Y-%m-%dT%H:%M:%S.%f") - timedelta(minutes=10)
-    print (recentTime.isoformat())
-    recentRespones = responseDB.find({"Time": {'$gte': recentTime.isoformat()}})
+def getResponses(username, sessionID, db):
+    responseDB = db.Responses
+
+    if (username=="Anonymous" or username=="None" or username=="Null" or username==""):
+        recentRespones = responseDB.find({"sessionID" : sessionID})
+    else:
+        recentRespones = responseDB.find({"username" : username})
 
     responseList = []
     try:
         for document in recentRespones:
-            del document['_id']
-            print(document)
-            responseList.append(document)
+            if (document['Response'] != "Manual Response"):
+                del document['_id']
+                del document['ipAddress']
+                del document['dpName']
+                del document['Time']
+                print(document)
+                responseList.append(document)
     except Exception as exc:
-        print (exc)
+        print(exc)
+
+    if (username=="Anonymous" or username=="None" or username=="Null" or username==""):
+        responseDB.delete_many({"sessionID" : sessionID})
+    else:
+        responseDB.delete_many({"username" : username})
+
+
     return json.dumps(responseList)
+
 
 
 def determineResponse(attacker, dpName, responseRaw, prison):
@@ -87,6 +97,8 @@ def determineResponse(attacker, dpName, responseRaw, prison):
             return responseRaw # There only is one response
     except Exception as broke:
         print (broke)
+
+
 
 
 def checkmaliciousUsers(user, dpName, prison):

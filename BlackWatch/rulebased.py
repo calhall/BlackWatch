@@ -18,7 +18,7 @@ def AnalyseEvent(BlackWatch, event, socketio):
     strippedTime = strTime[0:19] #Only take the necessary time information)
     Time = datetime.strptime(strippedTime, "%Y-%m-%dT%H:%M:%S") #Simplified ISO 8601 time format
 
-# ----------------------------------------------------------------
+# ---------------------------------------------------------------
 
 
 # Detection Point information -----------------------------------

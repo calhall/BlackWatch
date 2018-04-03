@@ -4,7 +4,7 @@ import sys, json, socket, pymongo, atexit, threading, time, os
 
 from BlackWatch.rulebased import AnalyseEvent
 from BlackWatch.configuration import GetConfiguration, addDP, RemoveDP
-from BlackWatch.responseHandler import getResponses, getResponsesDB
+from BlackWatch.responseHandler import getResponses
  #TODO Possibly check to see if I should be importing full directories
 from pymongo import MongoClient
 from flask import Flask, request, Response, render_template
@@ -75,7 +75,10 @@ def getConfig():
 
 @app.route('/getResponses', methods = ['GET'])
 def sendResponses():
-    responses = getResponses()
+    username = request.args.get('username')
+    sessionID = request.args.get('username')
+
+    responses = getResponses(username, sessionID, db) #Return responses for that user
     return responses
 
 @app.route('/getAttacks', methods = ['GET'])
@@ -91,16 +94,6 @@ def getAttacks():
     except Exception as exc:
         print (exc)
     return json.dumps(attackList)
-
-
-@app.route('/getRecentResponses', methods = ['GET'])
-def getRecentResponses():
-    try:
-        recentResponses = (getResponsesDB())
-        print (recentResponses)
-        return recentResponses
-    except Exception as exception:
-        print (exception)
 
 
 @app.route('/deleteDP', methods = ['POST'])

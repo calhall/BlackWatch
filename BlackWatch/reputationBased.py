@@ -49,7 +49,7 @@ def checkReputation(event, Time, socketio, client):
             socketio.emit('attack',
                           {'detectionPoint': "Multiple", 'username': username, 'ipAddress': ipAddress, 'Time': strTime,
                            'Session': sessionID})  # Send the attack to the reporting agent
-            addResponse(username, sessionID, ipAddress, "Multiple", "Warn User", Time, socketio)
+            addResponse(username, sessionID, ipAddress, "Multiple", "Warn User, Manual Response", Time, socketio)
 
 
 
@@ -80,7 +80,7 @@ def checkReputation(event, Time, socketio, client):
             socketio.emit('attack',
                           {'detectionPoint': "Multiple", 'username': 'Anonymous', 'ipAddress': ipAddress, 'Time': strTime,
                            'Session': sessionID})  # Send the attack to the reporting agent
-            addResponse(None, sessionID, ipAddress, "Multiple", "Warn User", Time, socketio)
+            addResponse(None, sessionID, ipAddress, "Multiple", "Warn User, Manual Response", Time, socketio)
 
 
 def increaseReputation(event, userID, Time, severity, socketio, client):

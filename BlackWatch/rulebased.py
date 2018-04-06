@@ -52,7 +52,7 @@ def AnalyseEvent(BlackWatch, event, socketio):
             increaseReputation(event, sessionID, strTime, severity, socketio, client) # Add this event to the users reputation
             numberofSessionEvents = BlackWatch.find({"User.sessionID": sessionID, "DetectionPoint.dpName": dpName,
                                                      "Time": {'$gte': Threshold.isoformat()}}).count()  # Using dot notation (User.username) allows us to search nested objects
-
+            print (numberofSessionEvents)
 
         if (numberofUserEvents >= int(countLimit)):
             print ("Attack Identified - " + username + " - " + dpName)
@@ -69,7 +69,6 @@ def AnalyseEvent(BlackWatch, event, socketio):
             addResponse(None, sessionID, ipAddress, dpName, response, Time, socketio)
         else:
             checkReputation(event, Time, socketio, client)
-
     except Exception as exc:
         print ("Detection point not properly configured. - " and exc)
 

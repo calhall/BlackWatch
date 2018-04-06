@@ -8,7 +8,7 @@ responses = []
 
 client = MongoClient()
 
-def addResponse(username, sessionID, ipAddress, dpName, response, Time, socketio):
+def addResponse(username, sessionID, ipAddress, dpName, response, Time, socketio): # TODO Manual responses must be added
 
     try:
         BlackWatch = client.BlackWatch
@@ -29,6 +29,7 @@ def addResponse(username, sessionID, ipAddress, dpName, response, Time, socketio
         socketio.emit('response', responseObject)
         prison.insert_one(attackObject) # Send the attacker to jail
         responseDB.insert_one(responseObject)
+
     elif (sessionID != None):
         finalResponse = determineResponse(sessionID, dpName, response, prison)
         if (finalResponse[0] == ' '):  # If the user has entered multiple responses, and has used a space after the comma

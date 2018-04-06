@@ -5,6 +5,7 @@ import sys, json, socket, pymongo, atexit, threading, time, os
 from BlackWatch.rulebased import AnalyseEvent
 from BlackWatch.configuration import GetConfiguration, addDP, RemoveDP
 from BlackWatch.responseHandler import getResponses
+from BlackWatch.reportingCharts import attacksbyDP, attacksbyUserType
  #TODO Possibly check to see if I should be importing full directories
 from pymongo import MongoClient
 from flask import Flask, request, Response, render_template
@@ -35,6 +36,15 @@ except:
 @app.route('/', methods = ['GET'])
 def dashboard():
     return render_template('index.html')
+
+@app.route('/AttackSummary')
+def chart():
+
+    dpAttacks = attacksbyDP(client)
+    userAttacks = attacksbyUserType(client)
+
+    return render_template('chart.html', set=dpAttacks, pie2=userAttacks)
+
 
 
 @app.route('/configuration', methods = ['GET'])

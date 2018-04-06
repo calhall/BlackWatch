@@ -3,7 +3,6 @@ import json
 
 def GetConfiguration():
 
-    print ("Triggered")
     detectionPointList = []
 
     try:
@@ -53,7 +52,7 @@ def addDP(rawdp):
         return "Failed to add DP"
 
 
-def RemoveDP(dpName): #TODO Implement this at a later date
+def RemoveDP(dpName):
 
     try:
         client = MongoClient()

@@ -17,12 +17,14 @@ def requestGenerator():
     print (checkResp.text)
 
 def randomUser():
-    user = random.randint(1,2)
+    user = random.randint(1,3)
     attacker=0
     if (user==1):
         attacker = User("Phillipo", "255.255.255.101", "xxxx")
     elif (user==2):
         attacker = User("Sergio", "109.123.234.1", "yyyy")
+    elif (user==3):
+        attacker = User("Anonymous", "101.101.101.87", "354343jjk23")
 
     return attacker
 

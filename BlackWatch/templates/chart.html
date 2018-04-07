@@ -3,6 +3,7 @@
 {% block content %}
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 
 <div class="container theme-showcase" role="main">
 
@@ -28,8 +29,11 @@
     </div>
     <br>
 
+
     <script> // Move this to a separate script file eventually
-      var pieData = [
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+      var pieData1 = [
         {% for item, label, colors in set %}
           {
             value: {{item}},
@@ -38,14 +42,31 @@
           },
         {% endfor %}
       ];
-      steps = 10
-      max = {{ max }}
+      //steps = 10
+      //max = {{ max }}
       // draw pie chart
-      new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData);
+
+
+        socket.on('attack', function(json)
+        {
+          for (var i=0; i < pieData1.length; i++)
+          {
+              var detectionPoint = pieData1[i];
+              if (detectionPoint.label == json['detectionPoint'])
+              {
+                  alert(pieChart.data)
+                  //pieChart.data.pieData1[i].value == pieData1[i].value + 1;
+                  pieChart.update()
+              }
+          }
+        });
+    new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData1);
+
+
     </script>
 
     <script> // Move this to a separate script file eventually
-      var pieData = [
+      var pieData2 = [
         {% for item, label, colors in pie2 %}
           {
             value: {{item}},
@@ -57,7 +78,7 @@
       steps = 10
       max = {{ max }}
       // draw pie chart
-      new Chart(document.getElementById("chart2").getContext("2d")).Pie(pieData);
+      new Chart(document.getElementById("chart2").getContext("2d")).Pie(pieData2);
     </script>
 
 
@@ -127,7 +148,6 @@
 </div>
 </div>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='scripts/eventListener.js') }}"></script>
 
 

@@ -2,261 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c0a1e36-be3e-4764-9210-cce5929aeaf4" name="Default" comment="Implementing unit testing for the communication between client/rest server. (Formatting etc.)">
-      <change beforePath="" afterPath="$PROJECT_DIR$/BlackWatch/reportingCharts.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/BlackWatch/templates/chart.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BlackWatch/static/images/logo0.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BlackWatch/static/images/logo1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BlackWatch/static/images/logo2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BlackWatch/static/images/logo2cropped.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/BlackWatch/static/images/logo3.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/BlackWatch/configuration.py" afterPath="$PROJECT_DIR$/BlackWatch/configuration.py" />
-      <change beforePath="$PROJECT_DIR$/BlackWatch/reputationBased.py" afterPath="$PROJECT_DIR$/BlackWatch/reputationBased.py" />
-      <change beforePath="$PROJECT_DIR$/BlackWatch/responseHandler.py" afterPath="$PROJECT_DIR$/BlackWatch/responseHandler.py" />
-      <change beforePath="$PROJECT_DIR$/BlackWatch/restAPI.py" afterPath="$PROJECT_DIR$/BlackWatch/restAPI.py" />
-      <change beforePath="$PROJECT_DIR$/BlackWatch/rulebased.py" afterPath="$PROJECT_DIR$/BlackWatch/rulebased.py" />
       <change beforePath="$PROJECT_DIR$/BlackWatch/static/scripts/eventListener.js" afterPath="$PROJECT_DIR$/BlackWatch/static/scripts/eventListener.js" />
       <change beforePath="$PROJECT_DIR$/BlackWatch/templates/base.html" afterPath="$PROJECT_DIR$/BlackWatch/templates/base.html" />
-      <change beforePath="$PROJECT_DIR$/BlackWatch/templates/configuration.html" afterPath="$PROJECT_DIR$/BlackWatch/templates/configuration.html" />
+      <change beforePath="$PROJECT_DIR$/BlackWatch/templates/chart.html" afterPath="$PROJECT_DIR$/BlackWatch/templates/chart.html" />
       <change beforePath="$PROJECT_DIR$/BlackWatch/templates/index.html" afterPath="$PROJECT_DIR$/BlackWatch/templates/index.html" />
-      <change beforePath="$PROJECT_DIR$/env/.Python" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/bin/activate" afterPath="$PROJECT_DIR$/env/bin/activate" />
-      <change beforePath="$PROJECT_DIR$/env/bin/activate.csh" afterPath="$PROJECT_DIR$/env/bin/activate.csh" />
-      <change beforePath="$PROJECT_DIR$/env/bin/activate.fish" afterPath="$PROJECT_DIR$/env/bin/activate.fish" />
-      <change beforePath="$PROJECT_DIR$/env/bin/activate_this.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/bin/chardetect" afterPath="$PROJECT_DIR$/env/bin/chardetect" />
-      <change beforePath="$PROJECT_DIR$/env/bin/easy_install" afterPath="$PROJECT_DIR$/env/bin/easy_install" />
-      <change beforePath="$PROJECT_DIR$/env/bin/easy_install-3.6" afterPath="$PROJECT_DIR$/env/bin/easy_install-3.6" />
-      <change beforePath="$PROJECT_DIR$/env/bin/flask" afterPath="$PROJECT_DIR$/env/bin/flask" />
-      <change beforePath="$PROJECT_DIR$/env/bin/pip" afterPath="$PROJECT_DIR$/env/bin/pip" />
-      <change beforePath="$PROJECT_DIR$/env/bin/pip3" afterPath="$PROJECT_DIR$/env/bin/pip3" />
-      <change beforePath="$PROJECT_DIR$/env/bin/pip3.6" afterPath="$PROJECT_DIR$/env/bin/pip3.6" />
-      <change beforePath="$PROJECT_DIR$/env/bin/python-config" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/bin/python3" afterPath="$PROJECT_DIR$/env/bin/python3" />
-      <change beforePath="$PROJECT_DIR$/env/bin/python3.6" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/bin/wheel" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/include/python3.6m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/__future__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/_bootlocale.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/_collections_abc.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/_dummy_thread.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/_weakrefset.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/abc.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/base64.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/bisect.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/codecs.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/collections" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/config-3.6m-darwin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/copy.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/copyreg.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/distutils/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/distutils/distutils.cfg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/encodings" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/enum.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/fnmatch.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/functools.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/genericpath.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/hashlib.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/heapq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/hmac.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/imp.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/importlib" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/io.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/keyword.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/lib-dynload" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/linecache.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/locale.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/no-global-site-packages.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/ntpath.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/operator.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/orig-prefix.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/os.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/posixpath.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/random.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/re.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/readline.so" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/reprlib.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/rlcompleter.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/shutil.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/Flask-0.12.2.dist-info/RECORD" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/Flask-0.12.2.dist-info/RECORD" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/chardet-3.0.4.dist-info/RECORD" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/chardet-3.0.4.dist-info/RECORD" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip-9.0.1.dist-info/DESCRIPTION.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip-9.0.1.dist-info/INSTALLER" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip-9.0.1.dist-info/METADATA" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip-9.0.1.dist-info/RECORD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip-9.0.1.dist-info/WHEEL" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip-9.0.1.dist-info/entry_points.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip-9.0.1.dist-info/metadata.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip-9.0.1.dist-info/top_level.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/cachecontrol/compat.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/cachecontrol/compat.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/adapters.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/adapters.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/api.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/api.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/auth.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/auth.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/cacert.pem" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/cacert.pem" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/certs.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/certs.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/compat.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/compat.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/cookies.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/cookies.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/exceptions.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/exceptions.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/models.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/models.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/big5freq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/big5prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/chardetect.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/chardistribution.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/charsetgroupprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/charsetprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/codingstatemachine.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/constants.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/cp949prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/escprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/escsm.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/eucjpprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/euckrfreq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/euckrprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/euctwfreq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/euctwprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/gb2312freq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/gb2312prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/hebrewprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/jisfreq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/jpcntx.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/langbulgarianmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/langcyrillicmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/langgreekmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/langhebrewmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/langhungarianmodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/langthaimodel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/latin1prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/mbcharsetprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/mbcsgroupprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/mbcssm.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/sbcharsetprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/sbcsgroupprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/sjisprober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/universaldetector.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/chardet/utf8prober.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/_collections.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/connection.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/connectionpool.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/contrib/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/contrib/appengine.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/contrib/ntlmpool.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/contrib/pyopenssl.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/contrib/socks.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/exceptions.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/fields.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/filepost.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/packages/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/packages/ordered_dict.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/packages/six.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/packages/ssl_match_hostname/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/packages/ssl_match_hostname/_implementation.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/poolmanager.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/request.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/response.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/util/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/util/connection.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/util/request.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/util/response.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/util/retry.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/util/timeout.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/packages/urllib3/util/url.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/sessions.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/sessions.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/status_codes.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/status_codes.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/utils.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/_vendor/requests/utils.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/download.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pip/download.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pkg_resources/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pkg_resources/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pkg_resources/_vendor/packaging/__about__.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pkg_resources/_vendor/packaging/__about__.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pkg_resources/_vendor/packaging/markers.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pkg_resources/_vendor/packaging/markers.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/pkg_resources/py31compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/DESCRIPTION.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/INSTALLER" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/LICENSE.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/METADATA" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/RECORD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/WHEEL" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/dependency_links.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/entry_points.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/metadata.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/top_level.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools-38.5.2.dist-info/zip-safe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/archive_util.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/archive_util.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/build_meta.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/__init__.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/bdist_egg.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/bdist_egg.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/build_clib.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/build_ext.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/build_ext.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/build_py.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/build_py.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/develop.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/develop.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/dist_info.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/easy_install.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/easy_install.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/egg_info.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/egg_info.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/sdist.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/sdist.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/test.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/test.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/upload.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/upload.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/upload_docs.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/command/upload_docs.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/config.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/dep_util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/depends.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/depends.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/dist.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/dist.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/glibc.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/monkey.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/monkey.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/msvc.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/msvc.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/namespaces.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/namespaces.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/package_index.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/package_index.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/pep425tags.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/py27compat.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/py27compat.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/py31compat.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/py31compat.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/py33compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/py36compat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/sandbox.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/sandbox.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/ssl_support.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/ssl_support.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/version.py" afterPath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/version.py" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/setuptools/wheel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/DESCRIPTION.rst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/INSTALLER" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/LICENSE.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/METADATA" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/RECORD" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/WHEEL" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/entry_points.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/metadata.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel-0.30.0.dist-info/top_level.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/__main__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/archive.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/bdist_wheel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/decorator.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/egg2wheel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/install.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/metadata.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/paths.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/pep425tags.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/pkginfo.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/signatures/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/signatures/djbec.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/signatures/ed25519py.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/signatures/keys.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/tool/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site-packages/wheel/wininst2wheel.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/site.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/sre_compile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/sre_constants.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/sre_parse.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/stat.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/struct.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/tarfile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/tempfile.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/token.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/tokenize.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/types.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/warnings.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/lib/python3.6/weakref.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/env/pip-selfcheck.json" afterPath="$PROJECT_DIR$/env/pip-selfcheck.json" />
-      <change beforePath="$PROJECT_DIR$/sampleApplication/clientGenerator.py" afterPath="$PROJECT_DIR$/sampleApplication/clientGenerator.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -266,18 +21,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/virtualEnv$python_run.coverage" NAME="python run Coverage Results" MODIFIED="1523030171769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/virtualEnv$python_run.coverage" NAME="python run Coverage Results" MODIFIED="1523104000334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/virtualEnv$Flask_Run_Server.coverage" NAME="Flask Run Server Coverage Results" MODIFIED="1520375669972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BlackWatch/ServerSide" />
     <SUITE FILE_PATH="coverage/virtualEnv$restAPI.coverage" NAME="restAPI Coverage Results" MODIFIED="1519236919505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BlackWatch/ServerSide" />
     <SUITE FILE_PATH="coverage/virtualEnv$rulebased.coverage" NAME="rulebased Coverage Results" MODIFIED="1519236571147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BlackWatch/ServerSide" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="chart.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chart.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BlackWatch/templates/chart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="145">
+              <caret line="90" column="47" lean-forward="false" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -290,46 +45,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="responseHandler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BlackWatch/responseHandler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1062">
-              <caret line="116" column="74" lean-forward="true" selection-start-line="116" selection-start-column="74" selection-end-line="116" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="restAPI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BlackWatch/restAPI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding>
-                <element signature="e#20#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BlackWatch/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="212">
+              <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configuration.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BlackWatch/templates/configuration.html">
+      <file leaf-file-name="eventListener.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackWatch/static/scripts/eventListener.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="632">
+              <caret line="56" column="47" lean-forward="false" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="responseHandler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BlackWatch/responseHandler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1426">
+              <caret line="116" column="74" lean-forward="true" selection-start-line="116" selection-start-column="74" selection-end-line="116" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -339,9 +80,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -406,18 +147,19 @@
         <option value="$PROJECT_DIR$/setup.js" />
         <option value="$PROJECT_DIR$/sampleApplication/unitTestSendEvents.py" />
         <option value="$PROJECT_DIR$/sampleApplication/unitTestReputationalAnalysis.py" />
-        <option value="$PROJECT_DIR$/BlackWatch/templates/base.html" />
         <option value="$PROJECT_DIR$/BlackWatch/configuration.py" />
         <option value="$PROJECT_DIR$/BlackWatch/reportingCharts.py" />
         <option value="$PROJECT_DIR$/BlackWatch/rulebased.py" />
-        <option value="$PROJECT_DIR$/BlackWatch/static/scripts/eventListener.js" />
         <option value="$PROJECT_DIR$/BlackWatch/reputationBased.py" />
         <option value="$PROJECT_DIR$/BlackWatch/responseHandler.py" />
         <option value="$PROJECT_DIR$/BlackWatch/templates/manualResponse.html" />
         <option value="$PROJECT_DIR$/BlackWatch/restAPI.py" />
-        <option value="$PROJECT_DIR$/BlackWatch/templates/chart.html" />
-        <option value="$PROJECT_DIR$/BlackWatch/templates/index.html" />
         <option value="$PROJECT_DIR$/BlackWatch/templates/configuration.html" />
+        <option value="$PROJECT_DIR$/BlackWatch/static/scripts/pieCharts.js" />
+        <option value="$PROJECT_DIR$/BlackWatch/templates/base.html" />
+        <option value="$PROJECT_DIR$/BlackWatch/templates/index.html" />
+        <option value="$PROJECT_DIR$/BlackWatch/static/scripts/eventListener.js" />
+        <option value="$PROJECT_DIR$/BlackWatch/templates/chart.html" />
       </list>
     </option>
   </component>
@@ -471,6 +213,13 @@
               <item name="virtualEnv" type="462c0819:PsiDirectoryNode" />
               <item name="BlackWatch" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="virtualEnv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="virtualEnv" type="462c0819:PsiDirectoryNode" />
+              <item name="BlackWatch" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -493,11 +242,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BlackWatch/static/images" />
       <recent name="$PROJECT_DIR$/BlackWatch/templates" />
       <recent name="$PROJECT_DIR$/sampleApplication" />
       <recent name="$PROJECT_DIR$/sampleApplication/sampleObjects" />
       <recent name="$PROJECT_DIR$/BlackWatch" />
-      <recent name="$PROJECT_DIR$/BlackWatch/ServerSide/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -646,14 +395,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37671232" sideWeight="0.49642858" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.273" sideWeight="0.54761904" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.189" sideWeight="0.45238096" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.189" sideWeight="0.45238096" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120238096" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120238096" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -711,7 +461,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/BlackWatch/sampleApplication/clientGenerator.py" />
     <entry file="file://$PROJECT_DIR$/BlackWatch/ServerSide/restAPI.py" />
     <entry file="file://$PROJECT_DIR$/BlackWatch/ServerSide/restAPI.py" />
     <entry file="file://$PROJECT_DIR$/BlackWatch/__init__.py">
@@ -864,26 +613,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BlackWatch/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BlackWatch/rulebased.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="581">
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BlackWatch/static/scripts/eventListener.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-664">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="39" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -912,44 +645,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BlackWatch/responseHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="116" column="74" lean-forward="true" selection-start-line="116" selection-start-column="74" selection-end-line="116" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BlackWatch/restAPI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="e#20#82#0" expanded="true" />
+            <element signature="e#20#82#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BlackWatch/templates/chart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BlackWatch/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,12 +663,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/static/scripts/pieCharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/responseHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1426">
+          <caret line="116" column="74" lean-forward="true" selection-start-line="116" selection-start-column="74" selection-end-line="116" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/BlackWatch/templates/configuration.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        <state relative-caret-position="315">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/static/scripts/eventListener.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="56" column="47" lean-forward="false" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BlackWatch/templates/chart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="90" column="47" lean-forward="false" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

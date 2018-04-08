@@ -54,7 +54,7 @@
 
           cell1.innerHTML = json['detectionPoint'];
           if (window.location.pathname == "/AttackSummary") {
-              cell3.innerHTML = json['IPAddress']
+              cell3.innerHTML = json['ipAddress']
           }
 
           cell2.innerHTML = json['username'];

@@ -45,21 +45,7 @@
       //steps = 10
       //max = {{ max }}
       // draw pie chart
-
-
-        socket.on('attack', function(json)
-        {
-          for (var i=0; i < pieData1.length; i++)
-          {
-              var detectionPoint = pieData1[i];
-              if (detectionPoint.label == json['detectionPoint'])
-              {
-                  alert(pieChart.data)
-                  //pieChart.data.pieData1[i].value == pieData1[i].value + 1;
-                  pieChart.update()
-              }
-          }
-        });
+    
     new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData1);
 
 

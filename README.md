@@ -46,6 +46,7 @@ Now that you are working within a virtual environment we can install the necessa
 
 ### Testing Setup
 
+Firstly open a new terminal and navigate to the BlackWatch project folder. Once there activate the virtual environment by sourcing the recently created `env/bin/activate` - the virtual environment we have previously created.
 To ensure everything has been set up correctly navigate to the sampleApplications directory within the BlackWatch project and run the `clientGenerator.py` file. This should populate the web interface with some sample data. 
 
 

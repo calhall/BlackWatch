@@ -31,9 +31,7 @@ def sendAttack():
     checkResp = requests.get('http://localhost:5000/getResponses?username=' + "repTest" + "&" + "sessionID=" + "xxxx")
     print (checkResp.text)
 
-    if '{"Username": "repTest", "Detection Point": "Multiple", "SessionID": "xxxx", "Response": "Warn User"}' in checkResp.text:
-        return "Response returned"
-    elif '{"Username": "repTest", "Detection Point": "Multiple", "SessionID": "xxxx", "Response": " Logout"}' in checkResp.text:
+    if '{"username": "repTest", "Session": "xxxx", "Response": "Warn User"}' in checkResp.text:
         return "Response returned"
     else:
         return "Failed"

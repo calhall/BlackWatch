@@ -45,8 +45,6 @@ def chart():
 
     return render_template('chart.html', set=dpAttacks, pie2=userAttacks)
 
-
-
 @app.route('/configuration', methods = ['GET'])
 def configuration():
     return render_template('configuration.html')
@@ -54,18 +52,18 @@ def configuration():
 # ------------------------------------
 
 
-# Handle communication with the server
 
+
+# RESTFul communication
 # Handle a user event
 @app.route('/addevent', methods = ['POST'])
 def addEvent():
     try:
         event = request.data.decode('utf-8')
-        Result = ParseEvent(event) #Send post request data to be analysed
+        Result = ParseEvent(event) # Send post request data to be analysed
     except:
         Result = "Incorrect formatting within POST request"
     return Result
-
 
 @app.route('/adddetectionpoint', methods = ['POST'])
 def addDetectionPoint():
@@ -86,9 +84,9 @@ def getConfig():
 @app.route('/getResponses', methods = ['GET'])
 def sendResponses():
     username = request.args.get('username')
-    sessionID = request.args.get('username')
+    sessionID = request.args.get('sessionID')
 
-    responses = getResponses(username, sessionID, db) #Return responses for that user
+    responses = getResponses(username, sessionID, db) # Return responses for that user
     return responses
 
 @app.route('/getAttacks', methods = ['GET'])
@@ -104,7 +102,6 @@ def getAttacks():
     except Exception as exc:
         print (exc)
     return json.dumps(attackList)
-
 
 @app.route('/deleteDP', methods = ['POST'])
 def deleteDP():
@@ -126,11 +123,11 @@ def ParseEvent(event):
     dp = decoded['DetectionPoint']
     if (checkIP(str(user['ipAddress']))):
 
-        #thread = threading.Thread(target=databaseAdd, args=(decoded,)) #the arguments formatting is odd, however this ensures that only one parameter is passed
-        #thread.start()
-        #Threading has been temporarily disabled
-        #This is to allow the socketio communications (reporting) to work, as it does like threading without a queue
-        #TODO Implement RabbitMQ Queuing service
+        # thread = threading.Thread(target=databaseAdd, args=(decoded,)) #the arguments formatting is odd, however this ensures that only one parameter is passed
+        # thread.start()
+        # Threading has been temporarily disabled
+        # This is to allow the socketio communications (reporting) to work, as it not does like threading without a queue
+        # TODO Implement RabbitMQ Queuing service
 
         socketio.emit('event', {'detectionPoint' : dp['dpName'], 'username' : user['username'], 'ipAddress' : user['ipAddress'], 'Time' : decoded['Time']}) #Send the event to the reporting agent
         databaseAdd(decoded)

@@ -9,6 +9,7 @@ def GetConfiguration():
         client = MongoClient()
         db = client.Configuration
 
+        # Get all detection points from the configuration database
 
         DPConfig = db.DetectionPoints
         allDetectionPoints = DPConfig.find()
@@ -36,6 +37,8 @@ def GetConfiguration():
         print ("Failed to connect to configuration database")
 
 
+# Add a new detection point
+
 def addDP(rawdp):
 
     dp = json.loads(rawdp)
@@ -51,6 +54,7 @@ def addDP(rawdp):
     except Exception as e:
         return "Failed to add DP"
 
+# Remove a detection point
 
 def RemoveDP(dpName):
 

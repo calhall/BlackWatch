@@ -15,7 +15,7 @@ def attacksbyDP(client):
 
     Time = datetime.strptime(datetime.now().isoformat()[0:19], "%Y-%m-%dT%H:%M:%S")
     timeYesterday = Time - timedelta(hours=24)
-    timeYesterday = str(timeYesterday).replace(' ', 'T')
+    timeYesterday = str(timeYesterday).replace(' ', 'T') # Get the time into the correct format
 
     for detectionPoint in detectionPoints:
 
@@ -23,7 +23,7 @@ def attacksbyDP(client):
         name = detectionPoint['Name']
         count = BlackWatch.find({"DetectionPoint.dpName": name,
                                 "Time": {'$gte': timeYesterday}}).count()
-        r = lambda: random.randint(0, 255)
+        r = lambda: random.randint(0, 255) # Randomly generate a colour
         colour = ('#%02X%02X%02X' % (r(), r(), r()))
 
         nameList.append(str(name))

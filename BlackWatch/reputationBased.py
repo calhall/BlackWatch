@@ -23,6 +23,7 @@ def checkReputation(event, Time, socketio, client):
     currentTime = datetime.now().isoformat()
     currentTimeDT = datetime.strptime(currentTime, "%Y-%m-%dT%H:%M:%S.%f")
 
+    # Check for the username within the watchlist collection
     if (watchlist.find({'UserID' : username}).count() > 0 and (username != "Anonymous" or username != "anonymous" or username != "None")):
         userCursor = watchlist.find({'UserID' : username})
 
@@ -51,7 +52,7 @@ def checkReputation(event, Time, socketio, client):
             addResponse(username, sessionID, ipAddress, "Multiple", "Warn User", Time, socketio)
 
 
-
+    # Check for the session ID within the watchlist collection
     elif (watchlist.find({'UserID' : sessionID}).count() > 0):
         userCursor = watchlist.find({'UserID' : sessionID})
 

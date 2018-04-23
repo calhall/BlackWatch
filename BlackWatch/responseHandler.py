@@ -53,7 +53,7 @@ def getResponses(username, sessionID, db):
     responseDB = db.Responses
 
     if (username=="Anonymous" or username=="None" or username=="Null" or username==""):
-        recentRespones = responseDB.find({"sessionID" : sessionID})
+        recentRespones = responseDB.find({"Session" : sessionID})
     else:
         recentRespones = responseDB.find({"username" : username})
 
@@ -71,7 +71,7 @@ def getResponses(username, sessionID, db):
         print(exc)
 
     if (username=="Anonymous" or username=="None" or username=="Null" or username==""):
-        responseDB.delete_many({"sessionID" : sessionID})
+        responseDB.delete_many({"Session" : sessionID})
     else:
         responseDB.delete_many({"username" : username})
 

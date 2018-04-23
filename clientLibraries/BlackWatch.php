@@ -4,10 +4,12 @@
  * User: calum
  * Date: 24/02/2018
  * Time: 11:30
+ * This file needs to be altered to suit the environment in which you are deploying the BlackWatch application
  */
 function sendEvent($dpName, $description){
 
     //Gain session information --------------------------------------
+    // This needs to be changed to suit your application's session variables
     try
     {
         $dvwaSession = $_SESSION[ 'dvwa' ];
@@ -61,7 +63,7 @@ function sendEvent($dpName, $description){
     //By default this is sent to the url below, this is a default local flask server
     //Change this to fit your environment suitable
 
-    $ch = curl_init('http://127.0.0.1:5000/addevent');
+    $ch = curl_init('http://127.0.0.1:5000/addevent'); // The URI of your BlackWatch RestAPI
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

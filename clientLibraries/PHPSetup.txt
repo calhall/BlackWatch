@@ -1,4 +1,4 @@
-To implement the BlackWatch solution into your application insert the BlackWatch.php file into a suitable directory within your application. (In the case of the DVWA this would be the 'external' directory.
+To implement the BlackWatch solution into your application insert the BlackWatch.php file into a suitable directory within your application. (In the case of the DVWA this would be the 'external' directory.)
 
 Now once you have identified an area within your application that you could create a detection point within - eg. somewhere SQL Injection may be possible. Simply include the BlackWatch file into that areas 'index.php' file. In PHP to include a file into a certain section you need to use syntax like the following:
 
@@ -7,7 +7,7 @@ include '../../external/BlackWatch.php';
 Now in an area where you could detect any malicious behaviour/input code similar to the following eg:
 
 If (userinput contains SQL syntax):
-    sendEvent('SQLsen Injection', 'SQL Syntax was detected')
+    sendEvent('SQL Injection', 'SQL Syntax was detected')
 
 Notice. The BlackWatch.php file has a function getSQLCommands() that can be accessed to retrieve and array of SQL commands. This can be useful for accurately identifying attacks.
 

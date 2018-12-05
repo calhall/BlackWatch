@@ -13,7 +13,7 @@ from flask_restful import Resource, Api
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'blackwatch'
+app.config['SECRET_KEY'] = 'blackwatch' # Again, this is still in development
 socketio = SocketIO(app)
 
 

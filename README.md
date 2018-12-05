@@ -2,7 +2,7 @@
 
 
 # BlackWatch
-The BlackWatch application was developed to encourage developers to implement attack awareness techniques into their applications. The following instructions should provide users the guidance required to set up a basic instance of the BlackWatch application.
+The BlackWatch application was developed to encourage developers to implement attack awareness techniques into their applications. The following instructions should provide users with the guidance required to set up a basic instance of the BlackWatch application.
 
 ## Download the BlackWatch Application
 
@@ -56,3 +56,10 @@ Implementing this solution to work alongside web applications will vary in appro
 
 Adding new detection points to the BlackWatch solution can be easily done by accessing the Configurations page within the web interface.
 
+
+*Note* - As of the time of writing, there is currently only one client side library that aids in the implementation process. Contributions to this area will be greatly appreciated.
+
+
+## DISCLAIMER
+
+It is important to note that this project is still very much in development, and is therefore likely to contain a number of security flaws as well as application bugs. Improvements and recommendations are welcome.
